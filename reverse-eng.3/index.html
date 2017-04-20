@@ -1,0 +1,102 @@
+<head>
+	<title>Morgan's Highmaps Project</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="http://code.highcharts.com/maps/highmaps.js"></script>
+	<script src="http://code.highcharts.com/mapdata/countries/us/us-all-all.js"></script>
+</head>
+<body>
+	<script>
+		/*SCRIPT*/
+		$( function () {
+			$.getJSON('data/tutorial-data.json', function (data) {
+				var countiesMap=Highcharts.geojson(Highcharts.maps['countries/us/us-all-all']),
+				lines = Highcharts.geojson(Highcharts.maps['countries/us/us-all-all'], 'mapline'), 
+				options;
+
+				options={
+					series: [{
+						mapData: countiesMap,
+						data: data,
+						joinBy:['hc-key','code'],
+						name: 'Postive Cases',
+						nullColor:'#cccccc',
+						borderColor:'#ffffff',
+						borderWidth:.5,
+
+						states:{
+							hover:{
+								color:'#ffffff'
+
+							}
+						}
+
+					}],
+					colorAxis:{
+						dataClasses:[
+						{
+							name:'n/a',
+							color: '#cccccc'
+						},
+						
+						{
+							name:'<5 tested',
+							color:'#999999'
+						},
+						{
+							to:0,
+							color:'#E6E3F0'
+						},
+						{
+							from:.1,
+							to:.299,
+							color:'#CBC9E2',
+						},
+						{
+							from:.3,
+							to:.799,
+							color:'#9E9AC8',
+						},
+						{
+							from:.8,
+							to:100,
+							color:'#6A51A3',
+						}
+						]
+					},
+					title:{
+						text:''
+					},
+					credits:{
+						enable:false
+
+					},
+					legend:{
+						title:{
+							text:"Percent of childern with EBLLs between 5 ug/dL and 9 ug/dL",
+							style:{
+								fontWeight:100
+							}
+						},
+					verticalAlign:'top',
+					valueDecimals:1,
+					valueSuffix:"%",
+					symbolRadius:0,
+					symbolHeight:14
+
+					}
+
+				};
+
+				$('#container').highcharts('Map',options);
+
+			});
+
+		});
+
+
+	</script>
+
+<div id="container">downloading map...</div>
+
+
+</body>
