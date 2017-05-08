@@ -1,0 +1,255 @@
+<head>
+	<title>Data Story 3</title>
+	<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Oswald" rel="stylesheet">
+
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" media="screen" type="text/css"> 
+	   <script src="js/jquery.js" type="text/javascript"></script>
+            <script src="js/tabletop.js" type="text/javascript"></script>
+            <script src="js/script.js" type="text/javascript"></script>
+       
+	<style>
+		body{
+			font-family: 'Oswald', sans-serif;
+			margin:45px;
+		}
+
+		h1{
+			font-family: 'Indie Flower', cursive;
+			font-size: 3em
+		}
+		
+		p{
+			font-size: 1em;
+			font-height:1.3em;
+			line-height:1.5em; 
+			word-spacing:-1px;
+		}
+        
+        .possible_answer  {
+            padding: .75em;
+          }
+
+        .possible_answer:hover {
+            background: #ffccff;
+            cursor: pointer;
+            font-weight: bold;
+         }
+
+        .correct-answer, .wrong-answer {
+            opacity: .75;
+            cursor: pointer;
+        }
+
+        .wrong-answer {
+            background: #FF8362;    
+        }
+
+        .correct-answer {
+           background: #62DA97;
+        }
+
+        .selected {
+            opacity: 1;
+        }
+
+        .selected:hover, .correct-answer:hover, .wrong-answer:hover {
+            opacity: 1;
+        }
+
+        .how_you_did {
+            text-align: center;
+            padding: 1em;
+            background-color: rgb(254, 231, 88);
+            font-weight: bold;
+            font-size: 1.25em;
+            -webkit-box-shadow: 0px 7px 5px rgba(50, 50, 50, 0.65);
+           -moz-box-shadow:    0px 7px 5px rgba(50, 50, 50, 0.65);
+            box-shadow:         0px 7px 5px rgba(50, 50, 50, 0.65);
+        }
+
+            /*multimedia styling*/
+
+            img, .youtube {
+                margin-bottom: 1em;
+                min-height: 200px;
+                max-height: 200px;
+            }
+
+            .possible_answer img {
+                max-height: 24em;
+            }
+
+            .question img, .revealed_answer img, .selected img, .correct-answer img, .wrong-answer img {
+                max-height: 24em;
+                display: block;
+            }
+
+            .videoembed {
+                position: relative;
+                padding-bottom: 56.25%;
+                padding-top: 30px;
+                height: 0;
+                overflow: hidden;
+            }
+
+            .videoembed iframe, .videoembed object, .videoembed embed {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+            }
+            .source{
+            	color:#5500ff;
+            	text-decoration: underline;
+            	text-align: center;
+            }
+            .source:hover{
+            	color:#9966ff;
+            }
+        
+	</style>
+</head>
+<body>
+	<h1>Disney Princesses: A deeper look</h1>
+	<h3> How have princesses evolved? </h3>
+	<h4>by: Morgan Spackman</h4>
+	<p> Many people grow up watching Disney movies, especially princess movies. With these movies, it is very easy to characterize women and men into typical gender roles. Disney has been creating princess movies for decades and in many cases the goal of the princess is to get married. This is true for earlier movies, but now Disney has been moving away from this and becoming more progressive and moving away for boxing their characters into typical gender roles. </p>
+
+	<br>
+	<p> Disney is also showing more women that do not demonstrate typical gender roles. Not every female character gets married at the end of the film. More are shown to be hard working and have jobs. Princesses have moved away from being passive like Cinderella who waited for a prince to save her from her situation to Moana who does not have a love interest and takes charge to save her village.</p>
+	
+	<div id="chart1"></div>
+
+	<p> Disney has become more progressive with its princess films but some things remain the same. A majority of female leads, especially princesses are white. Many of the stories are based off stories that had been created in Europe but Disney has the power to change this. In the Princess and the Frog , Tiana is shown to be of African-American descent. Disney has been slowly moving away from all white leads. </p>
+
+	<div id="pie1"></div>
+	<p>This does not mean that Disney princesses are perfect. There is still a long way to go with a majority of lines in films spoken by men. Most princess films do pass the Bechdel test which requires two named female characters that speak to each other but not about a man. The only exception to this is Aladdin because Jasmine is the only female character in the entire film that is not used as a background character.</p>
+	<br>
+	<p>Disney also still has yet to include an explicitly gay character in a major film. Although some characters have been believed to be gay such as Elsa and Merida due to their lack of interest in men,  nowhere is their sexuality stated to be anything other than heterosexual. </p>
+
+
+<h3> Test your princess knowledge</h3>
+
+ <!--CONTENT-->
+        <div class="container-fluid">
+            <div id="quiz"></div>
+        </div>
+
+    <!--JAVASCRIPT-->
+            <script src="js/jquery.js" type="text/javascript"></script>
+            <script src="js/tabletop.js" type="text/javascript"></script>
+            <script src="js/script.js" type="text/javascript"></script>
+            
+            <script type="text/javascript">
+                var quiz = jQuery('#quiz').quiz('https://docs.google.com/spreadsheets/d/1cXGz-GpgXG2_tggvv0m5Ow0fkZ1nwXDcFobq_Hq7LVw/pubhtml'); //your published spreadsheet key or URL goes here
+            </script>
+
+
+
+<div class="source">
+
+<a href="https://www.buzzfeed.com/justinezwiebel/we-did-a-census-of-all-the-disney-female-animated-characters?utm_term=.bhpy16kev#.af7x3XOmp">In depth analysis of Disney princesses </a>
+<br>
+<a href= "http://www.fandango.com/movie-news/jennifer-lee-on-becoming-disney-animations-first-female-director-742513"> Jennifer Lee on becoming Diesney's animations first female director</a>
+<br>
+<a href= "https://www.buzzfeed.com/leonoraepstein/things-you-never-knew-about-disney-princesses?utm_term=.aoL9lYWgX#.joEwRG530"> 57 Things you didn't know about Disney princesses</a>
+<br>
+<a href= "https://pudding.cool/2017/03/film-dialogue/"> Dialogue in Disney films </a>
+</div>
+	<!--JS:CHart1-->
+<script>
+	$(function(){
+		var myChart=Highcharts.chart('chart1',{
+			chart:{
+				type:'column'
+			},
+			series:[{
+			name: 'Royal Status at the End of Film',
+			data:[11,6,4],
+			color:'#f442b6',
+			},
+		
+			],
+			plotOptions:{
+				column:{
+					stacking:'normal'
+				}
+			},
+			xAxis:{
+				categories:['born royal','not royal','marry royal']
+			},
+			yAxis:{
+				title:{
+					text:'# of female leads'
+				},
+				gridLineWidth:0
+			},
+			title:{
+				text:''
+			},
+			credits:{
+				enabled:false
+			},
+			tooltip:{
+				formatter: function(){
+					return this.y + ' female main characters are ' + this.x 
+				}
+			}
+		});
+	});
+
+	Highcharts.chart('pie1', {
+  chart: {
+    plotBackgroundColor: null,
+    plotBorderWidth: null,
+    plotShadow: false,
+    type: 'pie'
+  },
+  title: {
+    text: 'Race of Disney Female Leads'
+  },
+  tooltip: {
+    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+  },
+  credits:{
+				enabled:false
+			},
+  plotOptions: {
+    pie: {
+      allowPointSelect: true,
+      cursor: 'pointer',
+      dataLabels: {
+        enabled: true,
+        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+        style: {
+          color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+        }
+      }
+    }
+  },
+  series: [{
+    name: 'Brands',
+    colorByPoint: true,
+    data: [{
+      name: 'Caucasian',
+      y: 71.4,
+      color:'#cc66ff'
+     
+    }, {
+      name: 'People of Color',
+      y: 28.6,
+      color:'#660099',
+    
+      sliced: true,
+      selected: true
+    }]
+  }]
+});
+
+</script>
+   
+</body>
